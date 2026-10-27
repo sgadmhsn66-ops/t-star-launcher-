@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T-Star TV Launcher</title>
+    <title>CLEAN YOUR TV - Launcher</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             margin: 0;
-            padding: 0;
+            padding: 40px;
             background-color: #121212;
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,37 +18,46 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 40px;
         }
         header {
             text-align: center;
         }
         h1 {
-            font-size: 3rem;
-            margin: 0;
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
             color: #00bcd4;
-            text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
         }
         p {
             color: #aaa;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .section-title {
             font-size: 1.2rem;
+            color: #00bcd4;
+            margin: 15px 0 10px 0;
+            text-align: right;
         }
         .grid {
             display: flex;
             gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 10px;
         }
         .card {
             background-color: #1e1e1e;
             border: 3px solid transparent;
             border-radius: 15px;
-            padding: 30px;
-            width: 200px;
+            padding: 25px;
+            width: 180px;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             transition: all 0.2s ease;
             cursor: pointer;
+            flex-shrink: 0;
         }
         .card:focus, .card:hover {
             border-color: #00bcd4;
@@ -63,19 +75,30 @@
 <body>
 
     <header>
-        <h1>T-Star TV</h1>
-        <p>واجهة Android 13 المخصصة - تصميم يوسف</p>
+        <h1>CLEAN YOUR TV</h1>
+        <p>واجهة كليين يور تيفي المخصصة - تصميم: يوسف</p>
     </header>
 
-    .grid {
-        <div class="card" tabindex="1">YouTube</div>
-        <div class="card" tabindex="2">Netflix</div>
-        <div class="card" tabindex="3">التطبيقات</div>
-        <div class="card" tabindex="4">الإعدادات</div>
+    <div>
+        <div class="section-title">الوصول السريع</div>
+        <div class="grid">
+            <div class="card" tabindex="1">YouTube</div>
+            <div class="card" tabindex="2">Netflix</div>
+            <div class="card" tabindex="3">Amazon Prime</div>
+            <div class="card" tabindex="4">Disney+</div>
+        </div>
+
+        <div class="section-title">أدوات التنظيف والصيانة</div>
+        <div class="grid">
+            <div class="card" tabindex="5">تحسين الأداء</div>
+            <div class="card" tabindex="6">تنظيف الملفات</div>
+            <div class="card" tabindex="7">تحديثات النظام</div>
+            <div class="card" tabindex="8">صحة التلفزيون</div>
+        </div>
     </div>
 
     <footer>
-        استخدم أزرار الأسهم في الريموت لتحديد التطبيق واضغط OK
+        استخدم أزرار الأسهم في الريموت للتنقل واضغط OK للتأكيد
     </footer>
 
 </body>
