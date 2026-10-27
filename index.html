@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090b10">
+  <title>نظيف TV — مشغّل التلفزيون</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="التنقل الرئيسي">
+      <div class="brand"><span class="brand-mark">N</span><span class="brand-name">نظيف<span>TV</span></span></div>
+      <nav class="nav-list">
+        <button class="nav-item active" data-page="home"><span class="nav-icon">⌂</span><span data-i18n="home">الرئيسية</span></button>
+        <button class="nav-item" data-page="apps"><span class="nav-icon">▦</span><span data-i18n="apps">التطبيقات</span></button>
+        <button class="nav-item" data-page="favorites"><span class="nav-icon">☆</span><span data-i18n="favorites">المفضلة</span></button>
+        <button class="nav-item" data-page="settings"><span class="nav-icon">⚙</span><span data-i18n="settings">الإعدادات</span></button>
+      </nav>
+      <div class="sidebar-bottom"><span class="online-dot"></span><span data-i18n="ready">جاهز للعمل</span><span class="version">v1.0</span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div><p class="eyebrow" data-i18n="welcome">مساحتك، على مزاجك</p><h1 id="page-title">مساء الخير 👋</h1></div>
+        <div class="top-meta"><div class="clock" id="clock">--:--</div><div class="date" id="date"></div><div class="profile-dot">●</div></div>
+      </header>
+
+      <section class="page active" id="page-home">
+        <article class="hero-card">
+          <div class="hero-copy">
+            <span class="pill"><span class="pill-dot"></span><span data-i18n="yourspace">واجهة تلفزيونك</span></span>
+            <h2><span data-i18n="heroLine1">كل شيء تحبه.</span><br><em data-i18n="heroLine2">بمكان واحد.</em></h2>
+            <p data-i18n="heroText">واجهة هادئة وسريعة، مصممة لتناسب شاشة التلفزيون والريموت.</p>
+            <div class="hero-actions">
+              <button class="primary-btn focusable" data-go="apps"><span>▦</span><span data-i18n="browseApps">استعراض التطبيقات</span></button>
+              <button class="ghost-btn focusable" data-go="settings"><span>⚙</span><span data-i18n="customize">تخصيص الواجهة</span></button>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-a"></div><div class="art-orbit orbit-b"></div><div class="art-screen"><div class="screen-glow"></div><div class="screen-lines"></div><div class="screen-label">CLEAN<span>VIEW</span></div><div class="screen-sub">YOUR TV · YOUR WAY</div></div><div class="art-spark spark-a">✦</div><div class="art-spark spark-b">✧</div></div>
+        </article>
+
+        <div class="section-heading"><div><p class="eyebrow" data-i18n="quickaccess">وصول سريع</p><h3 data-i18n="favoriteApps">تطبيقاتك المفضلة</h3></div><button class="text-btn focusable" data-go="apps" data-i18n="viewAll">عرض الكل ←</button></div>
+        <div class="app-grid" id="home-app-grid"></div>
+        <div class="bottom-info"><div class="info-icon">✦</div><div><strong data-i18n="tipTitle">نصيحة سريعة</strong><p data-i18n="tipText">استخدم الأسهم للتنقل، وOK للاختيار، وزر الرجوع للعودة.</p></div><kbd>← ↑ ↓ →</kbd><kbd>OK</kbd><kbd>BACK</kbd></div>
+      </section>
+
+      <section class="page" id="page-apps">
+        <div class="section-heading page-heading"><div><p class="eyebrow" data-i18n="library">مكتبتك</p><h3 data-i18n="allApps">كل التطبيقات</h3></div><span class="count-badge" id="app-count">6</span></div>
+        <p class="muted" data-i18n="appsHint">هذه بطاقات تجريبية. أضف أسماء تطبيقاتك وروابطها من الإعدادات.</p>
+        <div class="app-grid app-grid-large" id="all-app-grid"></div>
+      </section>
+
+      <section class="page" id="page-favorites">
+        <div class="section-heading page-heading"><div><p class="eyebrow" data-i18n="yourchoices">اختياراتك</p><h3 data-i18n="favorites">المفضلة</h3></div></div>
+        <div class="app-grid app-grid-large" id="favorites-grid"></div>
+        <div class="empty-state hidden" id="favorites-empty"><span>☆</span><h3 data-i18n="nothingFavorite">ماكو مفضلات بعد</h3><p data-i18n="favoriteHint">من صفحة التطبيقات اضغط نجمة حتى تضيف التطبيق للمفضلة.</p></div>
+      </section>
+
+      <section class="page" id="page-settings">
+        <div class="section-heading page-heading"><div><p class="eyebrow" data-i18n="makeItYours">خلّها على ذوقك</p><h3 data-i18n="settings">الإعدادات</h3></div></div>
+        <div class="settings-layout">
+          <div class="settings-menu">
+            <button class="setting-tab active focusable" data-setting="appearance">◐ <span data-i18n="appearance">المظهر</span></button>
+            <button class="setting-tab focusable" data-setting="language">文 <span data-i18n="language">اللغة</span></button>
+            <button class="setting-tab focusable" data-setting="appsmanage">▦ <span data-i18n="manageApps">إدارة التطبيقات</span></button>
+            <button class="setting-tab focusable" data-setting="navigation">⌖ <span data-i18n="remote">الريموت والتنقل</span></button>
+          </div>
+          <div class="settings-panel">
+            <div class="setting-group" data-panel="appearance"><h4 data-i18n="appearance">المظهر</h4><p class="muted" data-i18n="appearanceHint">خصّص ألوان الواجهة وحجم البطاقات.</p>
+              <label class="setting-row"><span><strong data-i18n="accentColor">لون التمييز</strong><small data-i18n="accentHint">لون الأزرار والعناصر المحددة</small></span><select id="accent-select" class="focusable"><option value="mint">نعناعي</option><option value="blue">أزرق</option><option value="violet">بنفسجي</option><option value="amber">ذهبي</option></select></label>
+              <label class="setting-row"><span><strong data-i18n="cardSize">حجم البطاقات</strong><small data-i18n="cardHint">اختار حجم مناسب لشاشتك</small></span><select id="size-select" class="focusable"><option value="comfortable">متوسط</option><option value="large">كبير</option><option value="compact">صغير</option></select></label>
+              <label class="setting-row"><span><strong data-i18n="animations">الحركات</strong><small data-i18n="animationsHint">تقليل الحركة قد يساعد الأجهزة الأضعف</small></span><input type="checkbox" id="motion-toggle" checked></label>
+              <label class="setting-row"><span><strong data-i18n="showClock">إظهار الساعة</strong><small data-i18n="clockHint">عرض الوقت في أعلى الواجهة</small></span><input type="checkbox" id="clock-toggle" checked></label>
+            </div>
+            <div class="setting-group hidden" data-panel="language"><h4 data-i18n="language">اللغة</h4><p class="muted" data-i18n="languageHint">غيّر لغة الواجهة واتجاه الكتابة.</p>
+              <label class="setting-row"><span><strong data-i18n="interfaceLanguage">لغة الواجهة</strong><small data-i18n="languageNote">يتم حفظ اختيارك على هذا الجهاز</small></span><select id="language-select" class="focusable"><option value="ar">العربية</option><option value="en">English</option></select></label>
+            </div>
+            <div class="setting-group hidden" data-panel="appsmanage"><h4 data-i18n="manageApps">إدارة التطبيقات</h4><p class="muted" data-i18n="manageHint">أضف بطاقة لتطبيق أو عدّل التطبيقات التجريبية.</p>
+              <label class="setting-row"><span><strong data-i18n="newAppName">اسم التطبيق</strong><small data-i18n="newAppNameHint">مثلاً: YouTube</small></span><input id="new-app-name" class="text-input focusable" maxlength="28" placeholder="YouTube"></label>
+              <label class="setting-row"><span><strong data-i18n="newAppUrl">رابط اختياري</strong><small data-i18n="newAppUrlHint">يفتح عند الاختيار في المتصفح</small></span><input id="new-app-url" class="text-input focusable" placeholder="https://..."></label>
+              <button class="primary-btn focusable" id="add-app-btn" data-i18n="addApp">＋ إضافة تطبيق</button>
+              <p class="small-note" data-i18n="nativeNote">ملاحظة: تشغيل تطبيقات Android مباشرة يحتاج نسخة Android أصلية وصلاحيات النظام؛ صفحة الويب وحدها ما تقدر تفتح كل التطبيقات.</p>
+            </div>
+            <div class="setting-group hidden" data-panel="navigation"><h4 data-i18n="remote">الريموت والتنقل</h4><p class="muted" data-i18n="remoteHint">الواجهة تدعم لوحة المفاتيح وأزرار التلفزيون الشائعة.</p>
+              <div class="shortcut-list"><div><span data-i18n="move">تنقل</span><kbd>↑ ↓ ← →</kbd></div><div><span data-i18n="select">اختيار</span><kbd>OK / Enter</kbd></div><div><span data-i18n="back">رجوع</span><kbd>Esc / Backspace</kbd></div><div><span data-i18n="settingsShortcut">الإعدادات</span><kbd>S</kbd></div></div>
+              <button class="ghost-btn focusable" id="reset-btn" data-i18n="reset">إعادة ضبط الإعدادات</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer"><span>نظيف TV</span><span data-i18n="footer">مصمّم للتلفزيون • خفيف وبسيط</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
